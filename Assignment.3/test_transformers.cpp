@@ -17,7 +17,7 @@ TEST(TransformerTest, transformers){
 }
 //autobots
  //we initialized the value of the autobots counter 
-   int Autobot:: autobotCounter = 0;
+   int Autobot:: autobotCounter = 0; // лучше не определять что-либо вне области видимости отдельного теста
 TEST(AutobotTest, autobotsCount){
     Autobot autobot;
     Autobot autobot1;
@@ -26,7 +26,7 @@ TEST(AutobotTest, autobotsCount){
 }
 //dinobot
 //we initialized the value of the counter 
- int Dinobot:: dinobotCounter = 0;
+ int Dinobot:: dinobotCounter = 0; // лучше не определять что-либо вне области видимости отдельного теста
 
 TEST(DinobotTest, dinobotsCount){
     Dinobot dinbot;
