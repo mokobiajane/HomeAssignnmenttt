@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 
-
+// добавить изменение описаные в autobot.h
 class Dinobot : public Basetransformer{
     private:
     std::string dinosaurForm;
