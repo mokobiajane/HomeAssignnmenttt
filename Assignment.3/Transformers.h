@@ -7,7 +7,7 @@
 //using std::string;
 #include <fstream>
 
-class Weapon{
+class Weapon{ // вынесит класс в отдельный файл
     private:
     std::string name;
     int size;
@@ -27,22 +27,23 @@ void setSize( int newSize){
 }
 };
 
-class Basetransformer{
+class Basetransformer{ // комментарий, относящийся ко всему классу: добавьте отступы согласно код стайлу
 private: 
-std::string name;
+std::string name; // назвать поля согласно google code style
 std::string brand;
 std::string colour;
 std::string shape;
 int height;
+// нужно объявить два поля-объекта. Одна композиция и одна ассоциация, как написано в презентации
 
 public:
 //constructor
-Basetransformer(){}
+Basetransformer(){} // определить конструктор в Transformers.cpp
 //destructor
-~Basetransformer(){};
-Weapon weapon;
+~Basetransformer(){}; // определить деструктор в Transformers.cpp
+Weapon weapon; // перенести к остальным полям класса
 //information about the transformer
-void aboutRobot(){
+void aboutRobot(){ // перенести определение метода в Transformers.cpp
    std::cout<<"Information about "<<name<<"\n";
    std::cout<<"Brand : "<<brand<<"\n";
    std::cout<<"Colour : "<<colour<<"\n";
