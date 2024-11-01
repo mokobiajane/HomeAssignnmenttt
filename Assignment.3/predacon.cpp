@@ -1,4 +1,4 @@
-//Mokobia Jane Chidima, st135735@student.spbu.ru, 24.B83
+//Mokobia Jane Chidima, st135735@student.spbu.ru, 24.B83as
 #include "predacon.h"
 
 std::string Predacon:: getBeastForm() const{
