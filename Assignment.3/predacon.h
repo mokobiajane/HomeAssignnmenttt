@@ -4,6 +4,8 @@
 #define PREDACON_H
 #include <iostream>
 #include <string>
+
+// добавить изменение описаные в autobot.h
 class Predacon: public Basetransformer{
     private:
     std::string beastForm;
