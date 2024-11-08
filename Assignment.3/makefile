@@ -5,7 +5,7 @@ PROJECT = jtransformers
 CXX = g++
 
 # Source files
-SRC = Transformers.cpp dinobot.cpp autobot.cpp predacon.cpp  test_transformers.cpp
+SRC = Transformers.cpp dinobot.cpp autobot.cpp predacon.cpp  test_transformers.cpp weapon.cpp memory.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

@@ -6,24 +6,27 @@
 #include <string>
 
 
-class Dinobot : public Basetransformer{
+class Dinobot : public BaseTransformer{
     private:
-    std::string dinosaurForm;
-    std::string dangerous;
+    std::string _dinosaurForm;
+    std::string _dangerous;
     
     
     public:
     //+1 when an object is created
-    static int  dinobotCounter;
+   static  int  dinobotCounter;
     //constructor
-    Dinobot(){
-        dinobotCounter++;
-    }
+    Dinobot();
+    //constructor with parameter
+    Dinobot(std::string dinosaur, std::string dangerous);
+
+
     std::string getDinosaurForm() const;
     void setDinosaurForm(std::string newDinosaurForm);
 
     std::string getDangeorus() const;
     void setDangerous(std::string newDangerous);
+    void aboutRobot()  override;
     
     };
     

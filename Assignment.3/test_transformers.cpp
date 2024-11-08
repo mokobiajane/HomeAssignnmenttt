@@ -9,7 +9,7 @@
    
 // base class test
 TEST(TransformerTest, transformers){
-   Basetransformer myRobo2;
+   BaseTransformer myRobo2;
    myRobo2.setName("Titanus");
    myRobo2.setHeight(150);
    EXPECT_EQ(myRobo2.getHeight(),150);
@@ -17,8 +17,9 @@ TEST(TransformerTest, transformers){
 }
 //autobots
  //we initialized the value of the autobots counter 
-   int Autobot:: autobotCounter = 0;
+  int Autobot::autobotCounter=0;
 TEST(AutobotTest, autobotsCount){
+
     Autobot autobot;
     Autobot autobot1;
     Autobot autobotQ;
@@ -26,8 +27,7 @@ TEST(AutobotTest, autobotsCount){
 }
 //dinobot
 //we initialized the value of the counter 
- int Dinobot:: dinobotCounter = 0;
-
+int Dinobot::dinobotCounter=0;
 TEST(DinobotTest, dinobotsCount){
     Dinobot dinbot;
     EXPECT_EQ(Dinobot:: dinobotCounter,1);
