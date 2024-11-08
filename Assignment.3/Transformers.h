@@ -19,7 +19,7 @@ private:
     
 
 public:
-//default costructor
+//default costructor.
 BaseTransformer();
 //constructor
 BaseTransformer(std::string _name, std::string brand, std::string colour, std::string shape, int height, Weapon weapon );
