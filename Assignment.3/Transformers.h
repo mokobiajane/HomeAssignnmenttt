@@ -22,7 +22,7 @@ public:
 //default costructor.
 BaseTransformer();
 //constructor
-BaseTransformer(std::string _name, std::string brand, std::string colour, std::string shape, int height, Weapon weapon );
+BaseTransformer(std::string _name, std::string _brand, std::string _colour, std::string _shape, int _height, Weapon _weapon, Memory _memory );
 //destructor
 ~BaseTransformer();
 
@@ -33,6 +33,7 @@ virtual void  aboutRobot();
 std::string getName() const;
 void setName( const std::string& newName);
 bool isValidName() const;
+
 //brand
 std::string getBrand();
 void setBrand(std::string newBrand);

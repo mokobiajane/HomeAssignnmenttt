@@ -6,13 +6,15 @@
  //constructor
  BaseTransformer::BaseTransformer(){}
 BaseTransformer:: BaseTransformer(std::string name, std::string brand, std::string colour,
-std:: string shape, int height, Weapon weapon ){
+std:: string shape, int height, Weapon weapon, Memory memory){
 
     _name = name;
     _brand = brand;
     _colour = colour;
     _shape = shape;
     _height = height;
+    _weapon = weapon;
+    *_memory = memory;
     
 
 }
@@ -29,8 +31,6 @@ void BaseTransformer :: aboutRobot(){
     std::cout<<"Colour : "<<_colour<<"\n";
     std::cout<<"Shape : "<<_shape<<"\n";
     std::cout<<"Height :"<<_height<<"\n";
-    std::cout<<"Weapon name:"<<_weapon.getName()<<"\n";
-    std::cout<<"Weapon size:"<<_weapon.getSize()<<"\n"; 
 
 }
  

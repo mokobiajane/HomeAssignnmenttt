@@ -1,26 +1,55 @@
-# Project name
 PROJECT = jtransformers
 
-# Compiler
+LIBPROJECT = $(PROJECT).a
+
+TESTPROJECT = test-$(PROJECT)
+
 CXX = g++
 
-# Source files
-SRC = Transformers.cpp dinobot.cpp autobot.cpp predacon.cpp  test_transformers.cpp weapon.cpp memory.cpp
+A = ar
 
-# Object files
-OBJ = $(SRC:.cpp=.o)
+AFLAGS = rsv
 
-# Google Test flags
-GTEST_LIBS = -lgtest -lgtest_main -pthread
+CCXFLAGS = -I. -std=c++17 -Wall -g -fPIC
 
-# Executable target
-$(PROJECT): $(OBJ)
-	$(CXX) -o $(PROJECT) $(OBJ) $(GTEST_LIBS)
+LDXXFLAGS = $(CCXFLAGS) -L. -l:$(LIBPROJECT)
 
-# Compile object files
-%.o: %.cpp
-	$(CXX) -c $< -o $@
+LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
 
-# Clean target
+DEPS=$(wildcard *.h)
+
+OBJ=Transformers.o autobot.o dinobot.o predacon.o weapon.o memory.o 
+
+TEST-OBJ=test_transformers.o 
+
+
+.PHONY: default
+
+default: all;
+
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+$(LIBPROJECT): $(OBJ)
+	$(A) $(AFLAGS) $@ $^
+
+$(PROJECT): main.o $(LIBPROJECT)
+	$(CXX) -o $@ main.o $(LDXXFLAGS)
+
+
+$(TESTPROJECT): $(LIBPROJECT) $(TEST-OBJ)
+	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
+
+test: $(TESTPROJECT)
+
+all: $(PROJECT)
+
+.PHONY: clean
+
 clean:
-	rm -f $(OBJ) $(PROJECT)
+	rm -f *.o
+
+cleanall: clean
+	rm -f $(PROJECT)
+	rm -f $(LIBPROJECT)
+	rm -f $(TESTPROJECT)
