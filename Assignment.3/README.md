@@ -6,9 +6,11 @@ Group:24.B83-mm
 
 st135735@student.spbu.ru
 
-Build: Use `make` Command 
+There exsist three classes(autobot,dinobot,predacon) These classes are inherited from the 4th class(Transformers class). Making it a total of four classes.
 
-Launch: run `./jtransformers ` executable
+Build: Use `make test` Command 
+
+Launch: run `./test-jtransformers ` executable
 
 This file contains my name, group,and email.
 

@@ -1,19 +1,20 @@
 //Mokobia Jane Chidima, st135735@student.spbu.ru, 24.B83
 #include "Transformers.h"
+#include "weapon.h"
 #include <string>
 
  
  //constructor
  BaseTransformer::BaseTransformer(){}
 BaseTransformer:: BaseTransformer(std::string name, std::string brand, std::string colour,
-std:: string shape, int height, Weapon weapon, Memory memory){
+std:: string shape, int height, Memory memory){
 
     _name = name;
     _brand = brand;
     _colour = colour;
     _shape = shape;
     _height = height;
-    _weapon = weapon;
+    _weapon = Weapon();
     *_memory = memory;
     
 
