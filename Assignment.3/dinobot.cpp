@@ -16,7 +16,7 @@ Dinobot :: Dinobot(std::string dinosaur, std::string dangerous){
     }
     //void  setDinosaurForm(std::string newDinosaurForm);
 
-    std::string Dinobot :: getDangeorus() const{
+    std::string Dinobot :: getDangerous() const{
         return _dangerous;
     }
      void Dinobot :: aboutRobot() {
