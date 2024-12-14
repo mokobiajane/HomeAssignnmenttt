@@ -1,4 +1,4 @@
-Assignment.4
+Assignment.5
 
 Mokobia Jane Chidima
 
@@ -8,7 +8,9 @@ st135735@student.spbu.ru
 
 There exsist three classes(autobot,dinobot,predacon) These classes are inherited from the 4th class(Transformers class). Making it a total of four classes.
 
-Build: Use `make test` Command 
+Build: Use `make` Command 
+
+Run:./transformers
 
 Launch: run `./test-jtransformers ` executable
 
