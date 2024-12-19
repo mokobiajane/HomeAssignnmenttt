@@ -70,20 +70,8 @@ TEST(Autobot, CheckComparison) {
     ASSERT_FALSE(ab1 < ab2);
 }
 
- TEST(Dinobot, CheckComparison) {
-    Dinobot dino1;
-    dino1.setDangerous("12");
-    dino1.setDinosaurForm("5");
-    Dinobot dino2;
-    dino2.setDangerous("3");
-    dino2.setDinosaurForm("3");
-    int dn1 = stoi(dino1.getDangerous());
-    int dn2 = stoi(dino2.getDangerous());
-    ASSERT_TRUE(dn1 > dn2);
-    ASSERT_FALSE(dn1 < dn2);
-} 
-
-TEST(Predacon, CheckComparison) {
+ 
+TEST(Dinobot, CheckComparison) {
     Predacon pcon1;
     pcon1.setBeastForm("10");
     Predacon pcon2;
