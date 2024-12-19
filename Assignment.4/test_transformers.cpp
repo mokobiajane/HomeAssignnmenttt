@@ -105,20 +105,20 @@ TEST(Autobot, OutputStream) {
     std::string expectedOutput = "120 Truck ";
     EXPECT_EQ(oss.str(), expectedOutput);
 }
-TEST(Predacon, OutputStreamDec) {
-    Predacon decp("d", "p");
+TEST(Predacon, OutputStreamPre) {
+    Predacon pred("d", "p");
     
     std::ostringstream oss; 
-    oss << decp; 
+    oss << pred; 
 
     std::string expectedOutput = "d p ";
     EXPECT_EQ(oss.str(), expectedOutput);
 }
-TEST(Dinobot, OutputStreamMin) {
-    Dinobot mini("dino", "boom");
+TEST(Dinobot, OutputStreamDin) {
+    Dinobot dino("dino", "boom");
     
     std::ostringstream oss; 
-    oss << mini; 
+    oss << dino; 
 
     std::string expectedOutput = "dino boom ";
     EXPECT_EQ(oss.str(), expectedOutput);
