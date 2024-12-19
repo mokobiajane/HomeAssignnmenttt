@@ -47,11 +47,6 @@ TEST(PredaconTest, predaconGetName)
     EXPECT_EQ(predacon.getName(),"Chidima");
 }
 
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
  
 //testing new comparison
  TEST(BaseTransformer, CheckComparison) {
@@ -61,6 +56,7 @@ int main(int argc, char **argv)
     trans2.setHeight(5000);
 
     ASSERT_TRUE(trans1 < trans2);
+    ASSERT_FALSE(trans1> trans2);
 }
 
 TEST(Autobot, CheckComparison) {
@@ -71,6 +67,7 @@ TEST(Autobot, CheckComparison) {
     int ab1 = stoi(abot1.getMoralAlignemt());
     int ab2 = stoi(abot2.getMoralAlignemt());
     ASSERT_TRUE(ab1> ab2);
+    ASSERT_FALSE(ab1 < ab2);
 }
 
  TEST(Dinobot, CheckComparison) {
@@ -83,6 +80,7 @@ TEST(Autobot, CheckComparison) {
     int dn1 = stoi(dino1.getDangerous());
     int dn2 = stoi(dino2.getDangerous());
     ASSERT_TRUE(dn1 > dn2);
+    ASSERT_FALSE(dn1 < dn2);
 } 
 
 TEST(Predacon, CheckComparison) {
@@ -94,4 +92,40 @@ TEST(Predacon, CheckComparison) {
     int pn2 = stoi(pcon2.getPeaceful());
 
     ASSERT_FALSE(pn2 > pn1);
+    ASSERT_TRUE(pn2 < pn1);
 } 
+
+
+TEST(Autobot, OutputStream) {
+    Autobot abot("120", "Truck");
+    
+    std::ostringstream oss; 
+    oss << abot; 
+
+    std::string expectedOutput = "120 Truck ";
+    EXPECT_EQ(oss.str(), expectedOutput);
+}
+TEST(Predacon, OutputStreamDec) {
+    Predacon decp("d", "p");
+    
+    std::ostringstream oss; 
+    oss << decp; 
+
+    std::string expectedOutput = "d p ";
+    EXPECT_EQ(oss.str(), expectedOutput);
+}
+TEST(Dinobot, OutputStreamMin) {
+    Dinobot mini("dino", "boom");
+    
+    std::ostringstream oss; 
+    oss << mini; 
+
+    std::string expectedOutput = "dino boom ";
+    EXPECT_EQ(oss.str(), expectedOutput);
+}
+
+int main(int argc, char **argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
